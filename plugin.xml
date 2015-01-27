@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.etonn.plugins.tts"
+        version="0.0.1">
+
+  <name>Tts</name>
+
+  <description>Cordova TTS (Text To Speech) plugin</description>
+
+  <author>Cheng Zhang</author>
+
+  <keywords>cordova, tts, voice, speech</keywords>
+
+  <license>Apache 2.0 License</license>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+
+  <js-module src="www/tts.js" name="Tts">
+    <clobbers target="window.plugins.Tts" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Tts">
+        <param name="android-package" value="com.etonn.plugins.tts" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/com/etonn/plugins/Tts.java" target-dir="src/com/etonn/plugins"/>
+  </platform>
+
+  <!-- ios -->
+  <platform name="ios">
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="Tts">
+        <param name="ios-package" value="Tts"/>
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/Tts+UIView.h"/>
+    <source-file src="src/ios/Tts+UIView.m"/>
+    <header-file src="src/ios/Tts.h"/>
+    <source-file src="src/ios/Tts.m"/>
+
+    <framework src="QuartzCore.framework" />
+  </platform>
+
+</plugin>
