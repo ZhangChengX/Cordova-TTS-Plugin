@@ -1,12 +1,14 @@
 # Cordova-TTS-Plugin
 
-Cordova TTS(Text To Speech) plugin for Android
-
 This instruction is for Cordova 3.0 and up.
 
 ### Description
 
+Cordova TTS(Text To Speech) plugin for Android
+
 This plugin allows you to invoke native method form javascript code, converting text into speech, making your app speakable.
+
+Before you install this plugin, please go to [voicecloud](http://open.voicecloud.cn/) to sign up an APPID for TTS API.
 
 ### Installation
 
