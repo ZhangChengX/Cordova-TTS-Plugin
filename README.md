@@ -4,11 +4,11 @@ This instruction is for Cordova 3.0 and up.
 
 ### Description
 
-Cordova TTS(Text To Speech) plugin for Android
+Cordova TTS(Text To Speech) plugin for Android. (will support IOS later)
 
 This plugin allows you to invoke native method form javascript code, converting text into speech, making your app speakable.
 
-Before you install this plugin, please go to [voicecloud](http://open.voicecloud.cn/) to sign up an APPID for TTS API.
+Before you installing this plugin, please go to [voicecloud](http://open.voicecloud.cn/) and sign up an APPID for TTS API.
 
 ### Installation
 
@@ -20,18 +20,18 @@ $ cordova plugin add https://github.com/etonn/Cordova-TTS-Plugin.git
 
 1. Add following xml to res/xml/config.xml :
    ```
-   	<!-- for Android -->
-    <feature name="Tts">
-        <param name="android-package" value="com.etonn.plugins.Tts" />
-    </feature>
+   <!-- for Android -->
+   <feature name="Tts">
+       <param name="android-package" value="com.etonn.plugins.Tts" />
+   </feature>
    ```
 
 2. Add permission to AndroidManifest.xml :
    ```
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+   <uses-permission android:name="android.permission.INTERNET" />
+   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+   <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
    ```
 
 3. Reference tts.js in index.html
@@ -42,27 +42,27 @@ $ cordova plugin add https://github.com/etonn/Cordova-TTS-Plugin.git
 4. Copy files
 
    for Android platform: 
-
+   
+   ```
    Copy Tts.java to platforms/android/src/com/etonn/plugins/
-   
    Copy tts.js to platforms/android/assets/www/plugins/com.etonn.plugins.tts/www/
-   
+   ```
 
 5. Edit cordova_plugins.js
    ```
    module.exports = [
       {
-        "file": "plugins/com.etonn.plugins.tts/www/tts.js",
-        "id": "com.etonn.plugins.tts.Tts",
-        "clobbers": [
+         "file": "plugins/com.etonn.plugins.tts/www/tts.js",
+         "id": "com.etonn.plugins.tts.Tts",
+         "clobbers": [
             "window.plugins.tts"
-        ]
+         ]
        }
-	];
-	module.exports.metadata = 
-	{
-	    "com.etonn.plugins.tts": "0.0.1"
-	}
+      ];
+   module.exports.metadata = 
+      {
+         "com.etonn.plugins.tts": "0.0.1"
+      }
    ```
 6. Make sure you include a reference to cordova.js in your index.html
 
