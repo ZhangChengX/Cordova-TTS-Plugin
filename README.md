@@ -1,2 +1,2 @@
 # Cordova-TTS-Plugin
-Cordova TTS plugin for Android
+Cordova TTS(Text To Speech) plugin for Android
