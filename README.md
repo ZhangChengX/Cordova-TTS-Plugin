@@ -34,21 +34,16 @@ $ cordova plugin add https://github.com/etonn/Cordova-TTS-Plugin.git
    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
    ```
 
-3. Reference tts.js in index.html
-   ```
-   <script type="text/javascript" charset="utf-8" src="plugins/tts.js"></script>
-   ```
-
-4. Copy files
+3. Copy files
 
    for Android platform: 
    
    ```
-   Copy Tts.java to platforms/android/src/com/etonn/plugins/
-   Copy tts.js to platforms/android/assets/www/plugins/com.etonn.plugins.tts/www/
+   Copy Tts.java to platforms/android/src/com/etonn/plugins/Tts.java
+   Copy tts.js to platforms/android/assets/www/plugins/com.etonn.plugins.tts/www/tts.js
    ```
 
-5. Edit cordova_plugins.js
+4. Edit cordova_plugins.js
    ```
    module.exports = [
       {
@@ -64,7 +59,7 @@ $ cordova plugin add https://github.com/etonn/Cordova-TTS-Plugin.git
          "com.etonn.plugins.tts": "0.0.1"
       }
    ```
-6. Make sure you include a reference to cordova.js in your index.html
+5. Make sure you include a reference to cordova.js in your index.html
 
    ```
    <script type="text/javascript" src="cordova.js"></script>
